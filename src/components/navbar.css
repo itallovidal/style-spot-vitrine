@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  opacity: 0;
+  transform: translateY(10%);
+  animation: show 500ms forwards;
+}
+main article {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+@keyframes show {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  background: #1E1E1E;
+  margin: 1.5% auto;
+  color: white;
+  align-items: center;
+  height: 50px;
+}
+header p {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-weight: bold;
+  width: 25%;
+}
+header nav {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+header nav a {
+  padding: 3% 1.5%;
+  color: white;
+  transition: 200ms;
+  height: 100%;
+}
+header nav a:hover {
+  color: #1E1E1E;
+  background: white;
+}
+header #container_search {
+  width: 25%;
+  position: relative;
+  background: white;
+  height: 100%;
+}
+header #container_search input {
+  height: 100%;
+  outline: none;
+  border: none;
+  padding-left: 20%;
+}
+header #container_search i {
+  position: absolute;
+  left: 5%;
+  color: #1E1E1E;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*# sourceMappingURL=navbar.css.map */

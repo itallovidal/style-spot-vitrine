@@ -1,0 +1,60 @@
+@use '../_config' as *;
+
+header {
+  display: flex;
+  justify-content: space-around;
+  max-width: $largura-total;
+  background: $cor-2;
+  margin: $esp-pp auto;
+  color: white;
+  align-items: center;
+  height: 50px;
+
+  p{
+    font-family: $fonte-1;
+    font-style: italic;
+    font-weight: bold;
+    width: 25%;
+  }
+
+  nav{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+
+    a{
+      padding: $esp-p $esp-pp;
+      color: white;
+      transition: 200ms;
+      height: 100%;
+    }
+
+    a:hover{
+      color: $cor-2;
+      background: white;
+    }
+  }
+
+  #container_search{
+    width: 25%;
+    position: relative;
+    background: white;
+    height: 100%;
+
+    input{
+      height: 100%;
+      outline: none;
+      border: none;
+      padding-left: 20% ;
+    }
+
+    i{
+      position: absolute;
+      left: 5%;
+      color: $cor-2;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

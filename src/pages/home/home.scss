@@ -1,0 +1,62 @@
+@use '../../_config' as *;
+
+#container_home{
+  #container_categoria{
+    display: flex;
+    flex-wrap: wrap;
+
+    .container_categoriaItem{
+      margin-bottom: $esp-p;
+      width: calc(50% - 5px);
+
+      img{
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
+        width: 100%;
+      }
+
+      .categoria_info{
+        margin-top: $esp-p;
+        display: flex;
+        justify-content: space-between;
+
+        span{
+          width: 68%;
+          text-align: center;
+          padding: $esp-p $esp-pp;
+          background: $cor-1;
+          color: white;
+          text-transform: capitalize;
+        }
+
+        .btn_verMais{
+          background: $cor-2;
+          color: white;
+          text-align: center;
+          border: none;
+          padding: $esp-p $esp-pp;
+          outline: none;
+          width: 30%;
+          transition: 200ms;
+          cursor: pointer;
+        }
+
+        .btn_verMais:hover{
+          background: white;
+          color: $cor-2;
+        }
+      }
+    }
+
+    .container_categoriaItem:nth-child(2n - 1){
+      margin-right: 10px;
+    }
+
+    .container_categoriaItem:nth-child(4){
+      img{
+        object-position: center;
+      }
+    }
+  }
+}
