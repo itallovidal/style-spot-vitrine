@@ -14,6 +14,7 @@ $cor-1: #176B87;
 $cor-2: #1E1E1E;
 $cor-3: #F0F0F0;
 
+
 $esp-xxg: 15%;
 $esp-xg: 12%;
 $esp-g: 8%;
@@ -21,7 +22,7 @@ $esp-m: 5%;
 $esp-p: 3%;
 $esp-pp: 1.5%;
 
-$largura-total: 1000px;
+$largura-total: 1200px;
 
 *{
   padding: 0;
@@ -31,7 +32,7 @@ $largura-total: 1000px;
 }
 
 a{
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 main{

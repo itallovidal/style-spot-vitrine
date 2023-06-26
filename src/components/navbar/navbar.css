@@ -6,7 +6,7 @@
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 main {
@@ -15,7 +15,7 @@ main {
   animation: show 500ms forwards;
 }
 main article {
-  width: 1000px;
+  width: 1200px;
   margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@ img {
 header {
   display: flex;
   justify-content: space-around;
-  max-width: 1000px;
+  max-width: 1200px;
   background: #1E1E1E;
   margin: 1.5% auto;
   color: white;

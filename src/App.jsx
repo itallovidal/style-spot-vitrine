@@ -1,4 +1,4 @@
-import Navbar from './components/navbar.jsx'
+import Navbar from './components/navbar/navbar.jsx'
 import Home from './pages/home/home.jsx'
 import React from "react";
 

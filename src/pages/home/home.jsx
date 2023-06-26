@@ -1,6 +1,7 @@
 import React from 'react';
 import './home.css'
 import CategoriaItem from "./categoriaItem.jsx";
+import CardProduto from "../../components/cardProduto/cardProduto.jsx";
 
 const categorias = [
     {categoria: 'relogios' ,srcImg: '/images/relogios.jpg', caminho: '/produtos/relogios' },
@@ -20,6 +21,10 @@ function Home(props) {
                 { categorias.map((categoria, i)=>{
                     return <CategoriaItem key={i} valores={categoria}/>
                 })}
+            </article>
+
+            <article>
+                <CardProduto/>
             </article>
         </main>
     );

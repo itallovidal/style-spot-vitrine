@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Slab", serif;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+main {
+  opacity: 0;
+  transform: translateY(10%);
+  animation: show 500ms forwards;
+}
+main article {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+@keyframes show {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.container_card {
+  width: 30%;
+}
+.container_card span {
+  background: white;
+  padding: 3% 5%;
+  text-align: center;
+}
+.container_card picture {
+  position: relative;
+  height: 380px;
+  display: block;
+  overflow: hidden;
+}
+.container_card picture img {
+  height: 100%;
+  object-fit: cover;
+  transition: 300ms;
+}
+.container_card picture img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+.container_card picture span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 35%;
+  border-radius: 8px 0 0 0;
+  padding-block: 5%;
+  font-family: "Lora", serif;
+  font-weight: bold;
+}
+.container_card .info_produto {
+  display: flex;
+  width: 100%;
+  margin-block: 3%;
+}
+.container_card .info_produto .nomeProduto {
+  width: 65%;
+  background: #F0F0F0;
+}
+.container_card .info_produto .marcaProduto {
+  width: 35%;
+}
+.container_card a {
+  padding: 3% 1.5%;
+  width: 100%;
+  background: #1E1E1E;
+  text-align: center;
+  color: white;
+  display: block;
+  transition: 500ms;
+}
+.container_card a:hover {
+  background: #176B87;
+  color: white;
+}
+
+/*# sourceMappingURL=cardProduto.css.map */

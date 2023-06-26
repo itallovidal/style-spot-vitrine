@@ -6,7 +6,7 @@ function Navbar(){
     return (
         <header>
             <div>
-                <p>heIN</p>
+                <p>Style  Spot</p>
             </div>
 
             <nav>
@@ -16,7 +16,8 @@ function Navbar(){
                 <Link to={'/produtos/tenis'}>Tênis</Link>
                 <Link to={'/produtos/relogios'}>Relógios</Link>
             </nav>
-            <div id={'container_search'}>
+
+            <div id='container_search'>
                 <input type="search" placeholder={'Pesquise um produto..'}/>
                 <i className="fa-solid fa-magnifying-glass"></i>
             </div>

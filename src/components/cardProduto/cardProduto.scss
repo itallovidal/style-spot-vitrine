@@ -1,0 +1,70 @@
+@use '../../_config' as *;
+
+.container_card{
+  width: 30%;
+
+  span{
+    background: white;
+    padding: $esp-p $esp-m;
+    text-align: center;
+  }
+
+  picture{
+    position: relative;
+    height: 380px;
+    display: block;
+    overflow: hidden;
+
+    img{
+      height: 100%;
+      object-fit: cover;
+      transition: 300ms;
+    }
+
+    img:hover{
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    span{
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 35%;
+      border-radius: 8px 0 0 0 ;
+      padding-block: $esp-m;
+      font-family: $fonte-1;
+      font-weight: bold;
+    }
+  }
+
+  .info_produto{
+    display: flex;
+    width: 100%;
+    margin-block: $esp-p;
+
+    .nomeProduto{
+      width: 65%;
+      background: $cor-3;
+    }
+
+    .marcaProduto{
+      width: 35%;
+    }
+  }
+
+  a{
+    padding: $esp-p $esp-pp;
+    width: 100%;
+    background: $cor-2;
+    text-align: center;
+    color: white;
+    display: block;
+    transition: 500ms;
+  }
+
+  a:hover{
+    background: $cor-1;
+    color: white;
+  }
+}
