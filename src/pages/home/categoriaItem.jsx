@@ -9,7 +9,7 @@ function CategoriaItem({valores}){
 
             <div className='categoria_info'>
                 <span>{valores.categoria}</span>
-                <Link to={valores.caminho} className='btn_verMais'> Ver mais ! </Link>
+                <Link to={valores.caminho} className='btn btn_verMais'> Ver mais ! </Link>
             </div>
         </div>
     );

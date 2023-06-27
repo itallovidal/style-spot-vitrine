@@ -56,7 +56,7 @@
   a{
     padding: $esp-p $esp-pp;
     width: 100%;
-    background: $cor-2;
+    background: $cor-1;
     text-align: center;
     color: white;
     display: block;
@@ -64,7 +64,7 @@
   }
 
   a:hover{
-    background: $cor-1;
+    background: $cor-2;
     color: white;
   }
 }

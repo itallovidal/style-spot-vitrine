@@ -31,20 +31,7 @@
         }
 
         .btn_verMais{
-          background: $cor-2;
-          color: white;
-          text-align: center;
-          border: none;
-          padding: $esp-p $esp-pp;
-          outline: none;
           width: 30%;
-          transition: 200ms;
-          cursor: pointer;
-        }
-
-        .btn_verMais:hover{
-          background: white;
-          color: $cor-2;
         }
       }
     }

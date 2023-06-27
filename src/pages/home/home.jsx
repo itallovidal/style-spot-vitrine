@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.css'
 import CategoriaItem from "./categoriaItem.jsx";
-import CardProduto from "../../components/cardProduto/cardProduto.jsx";
+import ResumoCategoria from "../../components/resumoCategoria/resumoCategoria.jsx";
 
 const categorias = [
     {categoria: 'relogios' ,srcImg: '/images/relogios.jpg', caminho: '/produtos/relogios' },
@@ -9,10 +9,6 @@ const categorias = [
     {categoria: 'roupas' ,srcImg: '/images/roupas.jpg', caminho: '/produtos/roupas' },
     {categoria: 'tenis' ,srcImg: '/images/tenis.jpg', caminho: '/produtos/tenis' }
 ]
-
-console.log(categorias[0])
-console.log(categorias[2])
-
 
 function Home(props) {
     return (
@@ -24,7 +20,10 @@ function Home(props) {
             </article>
 
             <article>
-                <CardProduto/>
+                <ResumoCategoria categoria={'womens-dresses'}/>
+                <ResumoCategoria categoria={'womens-jewellery'}/>
+                <ResumoCategoria categoria={'mens-watches'}/>
+                <ResumoCategoria categoria={'mens-shoes'}/>
             </article>
         </main>
     );

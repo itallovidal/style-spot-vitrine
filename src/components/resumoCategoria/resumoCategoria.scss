@@ -1,0 +1,42 @@
+@use '../../_config' as *;
+
+.container_resumoCategoria{
+
+  .container_titulo{
+    position: relative;
+    margin-bottom: $esp-p;
+
+    h1{
+      background: white;
+      padding-right: $esp-pp;
+      display: inline;
+    }
+  }
+
+  .container_titulo:before{
+    z-index: -1;
+    content: '';
+    width: 100%;
+    height: 5px;
+    background: $cor-3;
+    position: absolute;
+    top: 50%;
+  }
+
+  section{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .verMais_categoria{
+    width: 30%;
+    margin: $esp-pp auto;
+    padding: $esp-pp $esp-pp;
+    display: block;
+  }
+}
+
+.container_resumoCategoria:nth-last-child(1)
+{
+  margin-bottom: $esp-g;
+}

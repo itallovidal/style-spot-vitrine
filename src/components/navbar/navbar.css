@@ -29,6 +29,22 @@ img {
     opacity: 1;
   }
 }
+.btn {
+  background: #1E1E1E;
+  color: white;
+  border: none;
+  text-align: center;
+  outline: none;
+  transition: 200ms;
+  cursor: pointer;
+  padding: 3% 1.5%;
+}
+
+.btn:hover {
+  background: white;
+  color: #1E1E1E;
+}
+
 header {
   display: flex;
   justify-content: space-around;

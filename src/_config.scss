@@ -56,3 +56,20 @@ img{
     opacity: 1;
   }
 }
+
+.btn{
+  background: $cor-2;
+  color: white;
+  border: none;
+  text-align: center;
+  outline: none;
+  transition: 200ms;
+  cursor: pointer;
+  padding: $esp-p $esp-pp;
+}
+
+.btn:hover{
+  background: white;
+  color: $cor-2;
+
+}

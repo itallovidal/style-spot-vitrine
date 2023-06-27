@@ -29,6 +29,22 @@ img {
     opacity: 1;
   }
 }
+.btn {
+  background: #1E1E1E;
+  color: white;
+  border: none;
+  text-align: center;
+  outline: none;
+  transition: 200ms;
+  cursor: pointer;
+  padding: 3% 1.5%;
+}
+
+.btn:hover {
+  background: white;
+  color: #1E1E1E;
+}
+
 #container_home #container_categoria {
   display: flex;
   flex-wrap: wrap;
@@ -57,19 +73,7 @@ img {
   text-transform: capitalize;
 }
 #container_home #container_categoria .container_categoriaItem .categoria_info .btn_verMais {
-  background: #1E1E1E;
-  color: white;
-  text-align: center;
-  border: none;
-  padding: 3% 1.5%;
-  outline: none;
   width: 30%;
-  transition: 200ms;
-  cursor: pointer;
-}
-#container_home #container_categoria .container_categoriaItem .categoria_info .btn_verMais:hover {
-  background: white;
-  color: #1E1E1E;
 }
 #container_home #container_categoria .container_categoriaItem:nth-child(2n-1) {
   margin-right: 10px;

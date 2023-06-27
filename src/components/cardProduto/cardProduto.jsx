@@ -1,19 +1,21 @@
 import {Link} from "react-router-dom";
 import './cardProduto.css'
 
-function CardProduto() {
+function CardProduto({dados}) {
+
+    console.log(dados)
     return (
         <div className='container_card'>
             <picture>
-                <img src="./images/placeholder.png" alt=""/>
-                <span className={'preco'}> $100</span>
+                <img src={dados.images[0]} alt=""/>
+                <span className={'preco'}> ${dados.price}</span>
             </picture>
             <div className={'info_produto'}>
-                <span className={'nomeProduto'}> nome do produto</span>
-                <span className={'marcaProduto'}> marca</span>
+                <span className={'nomeProduto'}> {dados.title}</span>
+                <span className={'marcaProduto'}> {dados.brand}</span>
             </div>
 
-            <Link to={'/'}>Ver mais</Link>
+            <Link to={'/'}>Ver Produto</Link>
         </div>
     );
 }
