@@ -14,7 +14,7 @@ main {
   transform: translateY(10%);
   animation: show 500ms forwards;
 }
-main article {
+main article, main header {
   width: 1200px;
   margin: 0 auto;
 }
@@ -45,7 +45,7 @@ img {
   color: #1E1E1E;
 }
 
-header {
+#container_navbar {
   display: flex;
   justify-content: space-around;
   max-width: 1200px;
@@ -55,41 +55,41 @@ header {
   align-items: center;
   height: 50px;
 }
-header p {
+#container_navbar p {
   font-family: "Lora", serif;
   font-style: italic;
   font-weight: bold;
   width: 25%;
 }
-header nav {
+#container_navbar nav {
   width: 50%;
   display: flex;
   justify-content: space-around;
   height: 100%;
 }
-header nav a {
+#container_navbar nav a {
   padding: 3% 1.5%;
   color: white;
   transition: 200ms;
   height: 100%;
 }
-header nav a:hover {
+#container_navbar nav a:hover {
   color: #1E1E1E;
   background: white;
 }
-header #container_search {
+#container_navbar #container_search {
   width: 25%;
   position: relative;
   background: white;
   height: 100%;
 }
-header #container_search input {
+#container_navbar #container_search input {
   height: 100%;
   outline: none;
   border: none;
   padding-left: 20%;
 }
-header #container_search i {
+#container_navbar #container_search i {
   position: absolute;
   left: 5%;
   color: #1E1E1E;

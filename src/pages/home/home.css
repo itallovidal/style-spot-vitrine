@@ -14,7 +14,7 @@ main {
   transform: translateY(10%);
   animation: show 500ms forwards;
 }
-main article {
+main article, main header {
   width: 1200px;
   margin: 0 auto;
 }

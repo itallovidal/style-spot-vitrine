@@ -4,17 +4,17 @@ import {Link} from "react-router-dom";
 
 function Navbar(){
     return (
-        <header>
+        <header id={'container_navbar'}>
             <div>
                 <p>Style  Spot</p>
             </div>
 
             <nav>
                 <Link to={'/'}>Home</Link>
-                <Link to={'/produtos/roupas'}>Roupas</Link>
-                <Link to={'/produtos/joias'}>Joias</Link>
-                <Link to={'/produtos/tenis'}>Tênis</Link>
-                <Link to={'/produtos/relogios'}>Relógios</Link>
+                <Link to={'/produtos/womens-dresses'}>Roupas</Link>
+                <Link to={'/produtos/womens-jewellery'}>Joias</Link>
+                <Link to={'/produtos/mens-shoes'}>Tênis</Link>
+                <Link to={'/produtos/mens-watches'}>Relógios</Link>
             </nav>
 
             <div id='container_search'>

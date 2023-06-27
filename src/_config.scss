@@ -40,7 +40,7 @@ main{
   transform: translateY(10%);
   animation: show 500ms forwards;
 
-  article{
+  article, header{
     width: $largura-total;
     margin: 0 auto;
   }

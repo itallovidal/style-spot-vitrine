@@ -1,6 +1,6 @@
 @use '../../config' as *;
 
-header {
+#container_navbar {
   display: flex;
   justify-content: space-around;
   max-width: $largura-total;

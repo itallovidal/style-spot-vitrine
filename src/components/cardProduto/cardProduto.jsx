@@ -3,7 +3,6 @@ import './cardProduto.css'
 
 function CardProduto({dados}) {
 
-    console.log(dados)
     return (
         <div className='container_card'>
             <picture>

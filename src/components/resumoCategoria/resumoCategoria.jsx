@@ -17,18 +17,20 @@ function ResumoCategoria({categoria}) {
     React.useEffect(()=>{
         getItems(categoria)
             .then((resposta) => {
+                console.log(resposta)
                 setProdutos(resposta)
+                console.log(produtos)
         })
     }, [])
 
-    return produtos ? (
+    return produtos !== null ? (
         <article className={'container_resumoCategoria'}>
             <div className={'container_titulo'}>
                 <h1>{categorias[categoria]}</h1>
             </div>
             <section>
                 {produtos.map((produto)=>{
-                    return <CardProduto dados={produto}/>
+                    return <CardProduto key={produto.id} dados={produto}/>
                 })}
             </section>
 

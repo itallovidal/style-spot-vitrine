@@ -14,7 +14,7 @@ main {
   transform: translateY(10%);
   animation: show 500ms forwards;
 }
-main article {
+main article, main header {
   width: 1200px;
   margin: 0 auto;
 }
@@ -61,8 +61,10 @@ img {
 }
 .container_card picture img {
   height: 100%;
+  width: 100%;
   object-fit: cover;
   transition: 300ms;
+  object-position: top;
 }
 .container_card picture img:hover {
   transform: scale(1.2);

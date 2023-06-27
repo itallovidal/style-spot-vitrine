@@ -1,0 +1,46 @@
+@use '../../_config' as *;
+
+#container_listagemProdutos{
+  #header_listagem{
+    picture{
+      display: block;
+      width: 100%;
+      height: 400px;
+
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    #container_filtro{
+      background: $cor-2;
+      padding: $esp-pp;
+      width: 40%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      a{
+        color: white;
+        transition: 300ms;
+        padding: $esp-p $esp-pp;
+      }
+
+      a:hover{
+        background: white;
+        color: $cor-1;
+
+      }
+    }
+  }
+
+  #listagem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .container_card{
+      margin-bottom: $esp-p;
+    }
+  }
+}
