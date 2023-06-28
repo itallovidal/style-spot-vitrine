@@ -8,7 +8,7 @@
   margin: $esp-pp auto;
   color: white;
   align-items: center;
-  height: 50px;
+  height: 80px;
 
   p{
     font-family: $fonte-1;
@@ -28,6 +28,8 @@
       color: white;
       transition: 200ms;
       height: 100%;
+      display: flex;
+      align-items: center;
     }
 
     a:hover{

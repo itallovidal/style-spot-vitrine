@@ -11,22 +11,27 @@ a {
 
 main {
   opacity: 0;
-  transform: translateY(10%);
+  transform: translateY(5%);
   animation: show 500ms forwards;
 }
 main article, main header {
-  width: 1200px;
+  width: min(100%, 1200px);
   margin: 0 auto;
 }
 
 img {
   max-width: 100%;
+  opacity: 0;
+  animation: show 500ms forwards;
 }
 
 @keyframes show {
-  100% {
+  50% {
     transform: translateY(0);
+  }
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 .btn {
@@ -43,6 +48,33 @@ img {
 .btn:hover {
   background: white;
   color: #1E1E1E;
+  border: 2px solid black;
+}
+
+picture {
+  position: relative;
+  overflow: hidden;
+}
+
+picture:after {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  content: "";
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #eeeeee 50%, rgba(255, 255, 255, 0) 100%);
+  left: 0;
+  top: 0;
+  animation: loading 1500ms infinite;
+  z-index: -1;
+}
+
+@keyframes loading {
+  100% {
+    transform: translateX(-250%);
+  }
+}
+.loading-img {
+  display: none;
 }
 
 .container_card {
@@ -84,6 +116,11 @@ img {
   display: flex;
   width: 100%;
   margin-block: 3%;
+}
+.container_card .info_produto .nomeProduto, .container_card .info_produto .marcaProduto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .container_card .info_produto .nomeProduto {
   width: 65%;

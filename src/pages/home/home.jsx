@@ -4,10 +4,10 @@ import CategoriaItem from "./categoriaItem.jsx";
 import ResumoCategoria from "../../components/resumoCategoria/resumoCategoria.jsx";
 
 const categorias = [
-    {categoria: 'relogios' ,srcImg: '/images/relogios.jpg', caminho: '/produtos/mens-watches' },
-    {categoria: 'joias' ,srcImg: '/images/joias.jpg', caminho: '/produtos/womens-jewellery' },
-    {categoria: 'roupas' ,srcImg: '/images/roupas.jpg', caminho: '/produtos/womens-dresses' },
-    {categoria: 'tenis' ,srcImg: '/images/tenis.jpg', caminho: '/produtos/mens-shoes' }
+    {categoria: 'relogios' ,srcImg: '/images/home/relogios.jpg', caminho: '/produtos/mens-watches' },
+    {categoria: 'joias' ,srcImg: '/images/home/joias.jpg', caminho: '/produtos/womens-jewellery' },
+    {categoria: 'roupas' ,srcImg: '/images/home/roupas.jpg', caminho: '/produtos/womens-dresses' },
+    {categoria: 'tenis' ,srcImg: '/images/home/tenis.jpg', caminho: '/produtos/mens-shoes' }
 ]
 
 function Home() {

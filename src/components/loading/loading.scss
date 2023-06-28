@@ -1,0 +1,47 @@
+@use '../../_config' as *;
+
+#container_loading{
+    grid-auto-rows: auto auto;
+    display: grid;
+    place-items: center;
+
+  #container_dots{
+    display: flex;
+    margin-top: 50px;
+
+    span{
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: $cor-2;
+      animation: loading-dots 800ms infinite;
+    }
+
+    span:nth-child(1){
+      animation-delay: 100ms;
+    }
+
+    span:nth-child(2){
+      animation-delay: 200ms;
+      margin-inline: 10px;
+    }
+
+    span:nth-child(3){
+      animation-delay: 400ms;
+    }
+  }
+}
+
+@keyframes loading-dots {
+  40%{
+    transform: translateY(-50px);
+  }
+
+  42%{
+    transform: translateY(-50px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+}

@@ -3,6 +3,14 @@ import {Link, useParams} from "react-router-dom";
 import getItems from "../../utilities/getItems.jsx";
 import './listagemProdutos.css'
 import CardProduto from "../../components/cardProduto/cardProduto.jsx";
+import Loading from "../../components/loading/loading.jsx";
+
+const categoriaImagens = {
+    'mens-watches': '/images/list/capa/capaWatch.jpg',
+    'womens-jewellery': '/images/list/capa/capaEarring.jpg',
+    'womens-dresses': '/images/list/capa/capaClothing.jpg',
+    'mens-shoes': '/images/list/capa/capaShoes.jpg'
+}
 function ListagemProdutos() {
     const url = useParams()
     const [produtos, setProdutos] = React.useState(null)
@@ -10,18 +18,17 @@ function ListagemProdutos() {
     React.useEffect(()=>{
         getItems(url.categoria, 5)
             .then((resposta) => {
-                // console.log(resposta)
                 setProdutos(resposta)
             })
-    }, [])
+    }, [url])
 
 
 
     return produtos !== null ? (
-        <main id={'container_listagemProdutos'}>
+        <main key={produtos[0].category} id={'container_listagemProdutos'}>
             <header id={'header_listagem'}>
                 <picture>
-                    <img src="/images/placeholder.png" alt=""/>
+                    <img className={produtos[0].category} src={categoriaImagens[produtos[0].category]} alt=""/>
                 </picture>
                 <section id={'container_filtro'}>
                     <Link to={'/'}>Filtro 01</Link>
@@ -37,7 +44,7 @@ function ListagemProdutos() {
                 })}
             </article>
         </main>
-    ) : 'loading'
+    ) : <Loading/>
 }
 
 export default ListagemProdutos;

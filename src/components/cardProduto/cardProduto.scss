@@ -45,6 +45,11 @@
     width: 100%;
     margin-block: $esp-p;
 
+    .nomeProduto, .marcaProduto{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .nomeProduto{
       width: 65%;
       background: $cor-3;

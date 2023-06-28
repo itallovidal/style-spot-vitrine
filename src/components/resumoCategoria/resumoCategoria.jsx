@@ -3,6 +3,7 @@ import CardProduto from "../cardProduto/cardProduto.jsx";
 import {Link} from "react-router-dom";
 import getItems from "../../utilities/getItems.jsx";
 import React from "react";
+import Loading from "../loading/loading.jsx";
 
 const categorias = {
     'womens-dresses': 'Roupas',
@@ -17,9 +18,7 @@ function ResumoCategoria({categoria}) {
     React.useEffect(()=>{
         getItems(categoria)
             .then((resposta) => {
-                console.log(resposta)
                 setProdutos(resposta)
-                console.log(produtos)
         })
     }, [])
 
@@ -36,7 +35,6 @@ function ResumoCategoria({categoria}) {
 
             <Link className={'btn verMais_categoria'} to={`/produtos/${categoria}`}>Ver Mais</Link>
         </article>
-    ) : ''
-
+    ) : <Loading/>
 }
 export default ResumoCategoria;
