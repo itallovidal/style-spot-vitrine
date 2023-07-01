@@ -23,6 +23,7 @@ img {
   max-width: 100%;
   opacity: 0;
   animation: show 500ms forwards;
+  will-change: transform;
 }
 
 @keyframes show {

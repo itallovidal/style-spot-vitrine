@@ -1,0 +1,84 @@
+@use '../../config' as *;
+
+#container_produto{
+  #produto{
+    display: flex;
+
+    picture{
+      width: 45%;
+      height: 600px;
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    #produto_infos{
+      width: 55%;
+      padding-inline: $esp-p;
+
+      #produto_nome{
+        text-transform: capitalize;
+      }
+
+      #produto_espec:after{
+        content: '';
+        position: absolute;
+        width: 30%;
+        height: 5px;
+        background: $cor-3;
+        bottom: -25px;
+        left: 0;
+      }
+      #produto_espec{
+        position: relative;
+        margin-top: $esp-p;
+        margin-bottom: 50px;
+        display: flex;
+        width: 80%;
+        justify-content: space-between;
+
+        .item{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: $cor-2;
+          padding: $esp-p $esp-pp;
+          width: 100%;
+          margin-right: $esp-p;
+          transition: 200ms;
+          cursor: pointer;
+        }
+
+        .item:not(#preco){
+          background: $cor-3;
+        }
+
+        .item:not(#preco):hover{
+          background: $cor-2;
+          color: white;
+        }
+
+        #preco{
+          background: $cor-2;
+          color: white;
+        }
+
+        #preco:hover{
+          width: 100%;
+        }
+      }
+
+      #btn_comprar{
+        width: 50%;
+        display: block;
+      }
+    }
+  }
+
+  #container_sugestao{
+    margin-top: $esp-m;
+  }
+}

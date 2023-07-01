@@ -36,20 +36,21 @@ a{
 }
 
 main{
-  opacity: 0;
-  transform: translateY(5%);
-  animation: show 500ms forwards;
+   opacity: 0;
+   transform: translateY(5%);
+   animation: show 500ms forwards;
 
-  article, header{
-    width: $largura-total;
-    margin: 0 auto;
-  }
-}
+   article, header{
+     width: $largura-total;
+     margin: 0 auto;
+   }
+ }
 
 img{
   max-width: 100%;
   opacity: 0;
   animation: show 500ms forwards;
+  will-change: transform;
 }
 
 @keyframes show {

@@ -16,8 +16,10 @@ function ListagemProdutos() {
     const [produtos, setProdutos] = React.useState(null)
 
     React.useEffect(()=>{
+        setProdutos(null)
         getItems(url.categoria, 5)
             .then((resposta) => {
+                console.log(resposta)
                 setProdutos(resposta)
             })
     }, [url])

@@ -15,11 +15,12 @@ async function getItems(categoria, limite = 3){
         const queryAPI02= `https://fakestoreapi.com/products/category/${categorias[categoria]}?limit=${limite}`
         const respostaAPI02 = await fetch(queryAPI02)
         const itensAPI02 = await respostaAPI02.json()
-        console.log(itensAPI02)
 
         for ( let [i, produto] of itensAPI01.products.entries()) {
-            if(itensAPI02[i]?.image)
+            if(itensAPI02[i]?.image){
                 produto.images.unshift(itensAPI02[i].image)
+                produto.fakeStoreID = itensAPI02[i].id
+            }
         }
     }
 
@@ -34,6 +35,7 @@ async function getItems(categoria, limite = 3){
 
         for ( let [i, produto] of itensAPI01.products.entries()) {
             produto.images.unshift(imgs[i])
+            produto.shoesID = imgs[i]
         }
     }
 

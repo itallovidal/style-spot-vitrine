@@ -23,6 +23,7 @@ img {
   max-width: 100%;
   opacity: 0;
   animation: show 500ms forwards;
+  will-change: transform;
 }
 
 @keyframes show {
@@ -86,7 +87,7 @@ picture:after {
   width: calc(50% - 5px);
 }
 #container_home #container_categoria .container_categoriaItem img {
-  height: 300px;
+  height: 500px;
   object-fit: cover;
   object-position: 40%;
   width: 100%;

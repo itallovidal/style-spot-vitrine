@@ -23,6 +23,7 @@ img {
   max-width: 100%;
   opacity: 0;
   animation: show 500ms forwards;
+  will-change: transform;
 }
 
 @keyframes show {
@@ -106,6 +107,8 @@ picture:after {
   height: 100%;
   display: flex;
   align-items: center;
+  width: 100px;
+  justify-content: center;
 }
 #container_navbar nav a:hover {
   color: #1E1E1E;

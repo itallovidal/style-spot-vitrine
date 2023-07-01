@@ -3,6 +3,15 @@ import './cardProduto.css'
 
 function CardProduto({dados}) {
 
+    if(dados.fakeStoreID !== undefined){
+        dados.idSecundario = dados.fakeStoreID
+    }
+
+    if(dados.shoesID !== undefined){
+        dados.idSecundario = dados.shoesID
+    }
+
+    const query = `search?idPrincipal=${dados.id}&idSecundario=${dados.fakeStoreID !== undefined ? dados.fakeStoreID : 'none' }`
     return (
         <div key={dados.id} className='container_card'>
             <picture>
@@ -19,7 +28,7 @@ function CardProduto({dados}) {
                 <span className={'marcaProduto'}> {dados.brand}</span>
             </div>
 
-            <Link to={'/'}>Ver Produto</Link>
+            <Link to={`/produtos/${dados.category}/${query}`}>Ver Produto</Link>
         </div>
     );
 }

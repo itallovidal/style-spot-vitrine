@@ -4,6 +4,7 @@ import React from "react";
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import ListagemProdutos from "./pages/listagem/listagemProdutos.jsx";
+import Produto from "./pages/produto/produto.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
             <Route index element={<Home/>}/>
             <Route path={'/produtos/:categoria'} element={<ListagemProdutos/>}/>
+            <Route path={'/produtos/:categoria/:query'} element={<Produto/>}/>
         </Routes>
 
     </BrowserRouter>
