@@ -2,6 +2,10 @@
 
 .container_card{
   width: 30%;
+  @media (max-width: 500px) {
+    width: 100%;
+    margin-bottom: $esp-xg;
+  }
 
   span{
     background: white;

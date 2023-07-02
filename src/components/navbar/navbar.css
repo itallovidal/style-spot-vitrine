@@ -22,6 +22,11 @@
   align-items: center;
   height: 80px;
 }
+@media (max-width: 500px) {
+  #container_navbar {
+    display: none;
+  }
+}
 #container_navbar p {
   font-family: "Lora", serif;
   font-style: italic;

@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link, useLocation, useOutletContext, useParams} from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 import './produto.css'
 import ResumoCategoria from "../../components/resumoCategoria/resumoCategoria.jsx";
-import getItems from "../../utilities/getItems.jsx";
 import getProduct from "../../utilities/getProduct.jsx";
 import Loading from "../../components/loading/loading.jsx";
 

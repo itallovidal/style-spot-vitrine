@@ -2,6 +2,9 @@
 
 #container_listagemProdutos{
   #header_listagem{
+    @media (max-width: 500px){
+      width: 100%;
+    }
     picture{
       display: block;
       width: 100%;
@@ -24,6 +27,11 @@
       transform: translateY(-50%);
       display: flex;
       justify-content: space-between;
+      @media (max-width: 500px){
+        width: 100%;
+        padding-inline: $esp-m;
+      }
+
       a{
         color: white;
         transition: 300ms;

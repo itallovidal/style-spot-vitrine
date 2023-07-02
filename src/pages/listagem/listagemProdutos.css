@@ -12,6 +12,11 @@
     transform: translateX(-250%);
   }
 }
+@media (max-width: 500px) {
+  #container_listagemProdutos #header_listagem {
+    width: 100%;
+  }
+}
 #container_listagemProdutos #header_listagem picture {
   display: block;
   width: 100%;
@@ -32,6 +37,12 @@
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 500px) {
+  #container_listagemProdutos #header_listagem #container_filtro {
+    width: 100%;
+    padding-inline: 5%;
+  }
 }
 #container_listagemProdutos #header_listagem #container_filtro a {
   color: white;

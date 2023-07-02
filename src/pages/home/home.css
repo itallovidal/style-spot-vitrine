@@ -31,14 +31,34 @@
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  #container_home #container_categoria .container_categoriaItem .categoria_info {
+    flex-wrap: wrap;
+  }
+}
 #container_home #container_categoria .container_categoriaItem .categoria_info span {
   width: 68%;
   text-align: center;
   padding: 3% 1.5%;
   text-transform: capitalize;
 }
+@media (max-width: 500px) {
+  #container_home #container_categoria .container_categoriaItem .categoria_info span {
+    width: 100%;
+    margin-block: 12%;
+  }
+}
 #container_home #container_categoria .container_categoriaItem .categoria_info .btn_verMais {
   width: 30%;
+}
+@media (max-width: 500px) {
+  #container_home #container_categoria .container_categoriaItem .categoria_info .btn_verMais {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 #container_home #container_categoria .container_categoriaItem:nth-child(2n-1) {
   margin-right: 10px;

@@ -3,11 +3,16 @@
 #container_produto{
   #produto{
     display: flex;
+    @media (max-width: 500px){
+      flex-wrap: wrap;
+    }
 
     picture{
       width: 45%;
       height: 600px;
-
+      @media (max-width: 500px){
+        width: 100%;
+      }
       img{
         width: 100%;
         height: 100%;
@@ -18,6 +23,9 @@
     #produto_infos{
       width: 55%;
       padding-inline: $esp-p;
+      @media (max-width: 500px){
+        width: 100%;
+      }
 
       #produto_nome{
         text-transform: capitalize;
@@ -39,6 +47,9 @@
         display: flex;
         width: 80%;
         justify-content: space-between;
+        @media (max-width: 500px){
+          width: 100%;
+        }
 
         .item{
           display: flex;
@@ -74,6 +85,9 @@
       #btn_comprar{
         width: 50%;
         display: block;
+        @media (max-width: 500px){
+          width: 100%;
+        }
       }
     }
   }

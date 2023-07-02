@@ -10,6 +10,10 @@
   align-items: center;
   height: 80px;
 
+  @media (max-width: 500px) {
+    display: none;
+  }
+
   p{
     font-family: $fonte-1;
     font-style: italic;
