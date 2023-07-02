@@ -13,9 +13,10 @@
   }
 }
 #container_loading {
-  grid-auto-rows: auto auto;
   display: grid;
   place-items: center;
+  grid-template-rows: auto auto;
+  align-content: center;
 }
 #container_loading #container_dots {
   display: flex;

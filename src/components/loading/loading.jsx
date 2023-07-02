@@ -1,10 +1,11 @@
 import React from 'react';
 import './loading.css'
 
-function Loading() {
+
+function Loading( {pageLoading = false}) {
     return (
         <main>
-            <article id={'container_loading'}>
+            <article style={ pageLoading ? {minHeight: '100vh'} : {marginTop: "30px"}} id={'container_loading'}>
                 <h1>Loading</h1>
 
                 <section id={'container_dots'}>

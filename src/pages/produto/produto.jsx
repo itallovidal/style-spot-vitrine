@@ -44,7 +44,7 @@ function Produto() {
                 <ResumoCategoria categoria={categoriaAtual}/>
             </article>
         </main>
-    ) : <Loading/>
+    ) : <Loading pageLoading={true}/>
 
 }
 
