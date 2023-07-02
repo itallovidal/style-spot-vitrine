@@ -3,15 +3,17 @@ import './cardProduto.css'
 
 function CardProduto({dados}) {
 
+    dados.idSecundario = 'none'
+
     if(dados.fakeStoreID !== undefined){
         dados.idSecundario = dados.fakeStoreID
     }
 
     if(dados.shoesID !== undefined){
-        dados.idSecundario = dados.shoesID
+        dados.idSecundario = `${dados.shoesID}&p=shoes`
     }
 
-    const query = `search?idPrincipal=${dados.id}&idSecundario=${dados.fakeStoreID !== undefined ? dados.fakeStoreID : 'none' }`
+    const query = `search?idPrincipal=${dados.id}&idSecundario=${dados.idSecundario}`
     return (
         <div key={dados.id} className='container_card'>
             <picture>

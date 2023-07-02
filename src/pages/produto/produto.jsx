@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useLocation, useParams} from "react-router-dom";
+import {Link, useLocation, useOutletContext, useParams} from "react-router-dom";
 import './produto.css'
 import ResumoCategoria from "../../components/resumoCategoria/resumoCategoria.jsx";
 import getItems from "../../utilities/getItems.jsx";
@@ -8,13 +8,13 @@ import Loading from "../../components/loading/loading.jsx";
 
 function Produto() {
     const [produto, setProdutos] = React.useState(null)
+    const categoriaAtual = useParams().categoria
     const URLInfo = useLocation()
     const search = new URLSearchParams(URLInfo.search) // transforma em um objeto manipulável
 
     React.useEffect(()=>{
-        getProduct(search)
+        getProduct(search, categoriaAtual)
             .then((resposta) => {
-                console.log(resposta)
                 setProdutos(resposta)
             })
     }, [URLInfo])
@@ -32,7 +32,7 @@ function Produto() {
 
                     <div id={'produto_espec'}>
                         <Link className={'item'} to={'/'}>{produto.brand}</Link>
-                        <Link className={'item'} to={'/'}>{produto.category}</Link>
+                        <Link className={'item'} to={`/produtos/${categoriaAtual}`}>{produto.category}</Link>
                         <span className={'item'} id={'preco'}>${produto.price}</span>
                     </div>
 
@@ -41,7 +41,7 @@ function Produto() {
             </article>
 
             <article id={'container_sugestao'}>
-                <ResumoCategoria categoria={URL.categoria}/>
+                <ResumoCategoria categoria={categoriaAtual}/>
             </article>
         </main>
     ) : <Loading/>

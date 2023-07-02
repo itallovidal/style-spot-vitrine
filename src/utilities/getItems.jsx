@@ -25,17 +25,17 @@ async function getItems(categoria, limite = 3){
     }
 
     if(categoria === 'mens-shoes'){
-        const imgs = [
-            '/images/list/shoes/shoes1.jpg',
-            '/images/list/shoes/shoes2.jpg',
-            '/images/list/shoes/shoes3.jpg',
-            '/images/list/shoes/shoes4.jpg',
-            '/images/list/shoes/shoes5.jpg',
-        ]
+            const imgs = [
+                '/images/list/shoes/shoes1.jpg',
+                '/images/list/shoes/shoes2.jpg',
+                '/images/list/shoes/shoes3.jpg',
+                '/images/list/shoes/shoes4.jpg',
+                '/images/list/shoes/shoes5.jpg',
+            ]
 
         for ( let [i, produto] of itensAPI01.products.entries()) {
             produto.images.unshift(imgs[i])
-            produto.shoesID = imgs[i]
+            produto.shoesID = i
         }
     }
 

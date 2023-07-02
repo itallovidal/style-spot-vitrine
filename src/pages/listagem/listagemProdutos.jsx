@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, useParams} from "react-router-dom";
+import {Link, Outlet, useParams} from "react-router-dom";
 import getItems from "../../utilities/getItems.jsx";
 import './listagemProdutos.css'
 import CardProduto from "../../components/cardProduto/cardProduto.jsx";
@@ -11,6 +11,8 @@ const categoriaImagens = {
     'womens-dresses': '/images/list/capa/capaClothing.jpg',
     'mens-shoes': '/images/list/capa/capaShoes.jpg'
 }
+
+const teste = 'oi'
 function ListagemProdutos() {
     const url = useParams()
     const [produtos, setProdutos] = React.useState(null)
@@ -19,7 +21,6 @@ function ListagemProdutos() {
         setProdutos(null)
         getItems(url.categoria, 5)
             .then((resposta) => {
-                console.log(resposta)
                 setProdutos(resposta)
             })
     }, [url])
@@ -45,6 +46,7 @@ function ListagemProdutos() {
                     return <CardProduto key={produto.id} dados={produto}/>
                 })}
             </article>
+            <Outlet context={teste}/>
         </main>
     ) : <Loading/>
 }
