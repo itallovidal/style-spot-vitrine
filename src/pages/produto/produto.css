@@ -27,6 +27,7 @@
 @media (max-width: 500px) {
   #container_produto #produto picture {
     width: 100%;
+    margin-bottom: 8%;
   }
 }
 #container_produto #produto picture img {

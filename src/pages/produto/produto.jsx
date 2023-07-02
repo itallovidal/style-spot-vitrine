@@ -12,6 +12,7 @@ function Produto() {
     const search = new URLSearchParams(URLInfo.search) // transforma em um objeto manipulável
 
     React.useEffect(()=>{
+        setProdutos(null)
         getProduct(search, categoriaAtual)
             .then((resposta) => {
                 setProdutos(resposta)
