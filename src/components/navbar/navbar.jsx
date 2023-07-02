@@ -1,6 +1,7 @@
 import React from "react";
 import './navbar.css'
 import {Link} from "react-router-dom";
+import categoriasInfo from "../../utilities/categoria.config.jsx";
 
 function Navbar(){
     return (
@@ -11,10 +12,11 @@ function Navbar(){
 
             <nav>
                 <Link to={'/'}>Home</Link>
-                <Link to={'/produtos/womens-dresses'}>Roupas</Link>
-                <Link to={'/produtos/womens-jewellery'}>Joias</Link>
-                <Link to={'/produtos/mens-shoes'}>Tênis</Link>
-                <Link to={'/produtos/mens-watches'}>Relógios</Link>
+                {
+                    categoriasInfo.map((info, i)=>{
+                        return <Link key={i} to={info.caminho}>{info.categoria}</Link>
+                    })
+                }
             </nav>
 
             <div id='container_search'>

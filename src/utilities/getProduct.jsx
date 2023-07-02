@@ -8,10 +8,17 @@ const imgs = [
 
 const categorias = {
     'mens-shoes': 'men\'s clothing',
-    'mens-watches': 'men\'s clothing',
-    'womens-jewellery': 'jewelery',
-    'womens-dresses': 'women\'s clothing',
+    'womens-shoes': 'women\'s clothing',
 
+    'mens-shirts': 'men\'s clothing',
+    'womens-dresses': 'women\'s clothing',
+    'tops': 'women\'s clothing',
+
+    'mens-watches': 'men\'s clothing',
+    'womens-watches': 'men\'s clothing',
+
+    'sunglasses': 'jewelery',
+    'womens-jewellery': 'jewelery',
 }
 
 async function getProduct(search, categoria){
@@ -31,14 +38,12 @@ async function getProduct(search, categoria){
         produto.images.unshift(imgs[search.get('idSecundario')])
     }
 
-    console.log(categoria)
     const query3 = `https://fakestoreapi.com/products/category/${categorias[categoria]}`
     const response3 = await fetch(query3)
     const produto3 = await response3.json()
 
     // (max - min ) + min
     const nAleatorio = Math.round(Math.random() * (3 - 0 ) + 0)
-    console.log(nAleatorio)
 
     produto.description =  produto3[nAleatorio].description
 

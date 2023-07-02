@@ -5,24 +5,43 @@ import './listagemProdutos.css'
 import CardProduto from "../../components/cardProduto/cardProduto.jsx";
 import Loading from "../../components/loading/loading.jsx";
 
-const categoriaImagens = {
-    'mens-watches': '/images/list/capa/capaWatch.jpg',
-    'womens-jewellery': '/images/list/capa/capaEarring.jpg',
-    'womens-dresses': '/images/list/capa/capaClothing.jpg',
-    'mens-shoes': '/images/list/capa/capaShoes.jpg'
+const query = {
+    'roupas': ['womens-dresses', 'mens-shirts', 'tops'],
+    'joalheria': ['womens-jewellery', 'sunglasses'],
+    'relogios': ['mens-watches', 'womens-watches'],
+    'tenis': ['mens-shoes', 'womens-shoes']
 }
 
-const teste = 'oi'
+const categoriaImagens = {
+    'relogios': '/images/list/capa/capaWatch.jpg',
+    'joalheria': '/images/list/capa/capaEarring.jpg',
+    'roupas': '/images/list/capa/capaClothing.jpg',
+    'tenis': '/images/list/capa/capaShoes.jpg'
+}
+
+async function getProducts(categorias){
+
+    let produtos = []
+
+    for (const categoria of categorias) {
+        const resultado = await getItems( categoria, 5)
+        produtos = [...produtos, ...resultado]
+    }
+
+    return produtos
+}
+
 function ListagemProdutos() {
     const url = useParams()
     const [produtos, setProdutos] = React.useState(null)
-
+    // console.log(produtos)
     React.useEffect(()=>{
         setProdutos(null)
-        getItems(url.categoria, 5)
-            .then((resposta) => {
+
+        getProducts(query[url.categoria])
+            .then((resposta)=>{
                 setProdutos(resposta)
-            })
+        })
     }, [url])
 
 
@@ -31,7 +50,7 @@ function ListagemProdutos() {
         <main key={produtos[0].category} id={'container_listagemProdutos'}>
             <header id={'header_listagem'}>
                 <picture>
-                    <img className={produtos[0].category} src={categoriaImagens[produtos[0].category]} alt=""/>
+                    <img className={produtos[0].category} src={categoriaImagens[url.categoria]} alt=""/>
                 </picture>
                 <section id={'container_filtro'}>
                     <Link to={'/'}>Filtro 01</Link>
@@ -46,7 +65,6 @@ function ListagemProdutos() {
                     return <CardProduto key={produto.id} dados={produto}/>
                 })}
             </article>
-            <Outlet context={teste}/>
         </main>
     ) : <Loading/>
 }

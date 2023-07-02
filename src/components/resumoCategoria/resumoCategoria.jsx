@@ -4,19 +4,20 @@ import {Link} from "react-router-dom";
 import getItems from "../../utilities/getItems.jsx";
 import React from "react";
 import Loading from "../loading/loading.jsx";
+import categoriasInfo from "../../utilities/categoria.config.jsx";
 
-const categorias = {
-    'womens-dresses': 'Roupas',
-    'womens-jewellery': 'Jóias',
-    'mens-watches': 'Relógios',
-    'mens-shoes': 'Tênis'
+const query = {
+    'Relógios': 'mens-watches',
+    'Joias':'womens-jewellery',
+    'Roupas': 'womens-dresses',
+    'Tênis':'mens-shoes'
 }
 
-function ResumoCategoria({categoria}) {
+function ResumoCategoria({categoriasInfo}) {
     const [produtos, setProdutos] = React.useState(null)
 
     React.useEffect(()=>{
-        getItems(categoria)
+        getItems(query[categoriasInfo.categoria])
             .then((resposta) => {
                 setProdutos(resposta)
         })
@@ -25,7 +26,7 @@ function ResumoCategoria({categoria}) {
     return produtos !== null ? (
         <article className={'container_resumoCategoria'}>
             <div className={'container_titulo'}>
-                <h1>{categorias[categoria]}</h1>
+                <h1>{categoriasInfo.categoria}</h1>
             </div>
             <section>
                 {produtos.map((produto)=>{
@@ -33,7 +34,7 @@ function ResumoCategoria({categoria}) {
                 })}
             </section>
 
-            <Link className={'btn verMais_categoria'} to={`/produtos/${categoria}`}>Ver Mais</Link>
+            <Link className={'btn verMais_categoria'} to={`${categoriasInfo.caminho}`}>Ver Mais</Link>
         </article>
     ) : <Loading/>
 }
