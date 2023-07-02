@@ -32,7 +32,6 @@
 }
 #container_listagemProdutos #header_listagem #container_filtro {
   background: #1E1E1E;
-  padding: 1.5%;
   width: 40%;
   transform: translateY(-50%);
   display: flex;
@@ -44,14 +43,20 @@
     padding-inline: 5%;
   }
 }
-#container_listagemProdutos #header_listagem #container_filtro a {
+#container_listagemProdutos #header_listagem #container_filtro span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 25%;
   color: white;
-  transition: 300ms;
+  transition: 200ms;
   padding: 3% 1.5%;
+  cursor: pointer;
 }
-#container_listagemProdutos #header_listagem #container_filtro a:hover {
+#container_listagemProdutos #header_listagem #container_filtro span:hover {
   background: white;
-  color: #176B87;
+  color: #1E1E1E;
 }
 #container_listagemProdutos #listagem {
   display: flex;

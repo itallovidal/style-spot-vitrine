@@ -4,6 +4,8 @@ import getItems from "../../utilities/getItems.jsx";
 import './listagemProdutos.css'
 import CardProduto from "../../components/cardProduto/cardProduto.jsx";
 import Loading from "../../components/loading/loading.jsx";
+import Filtro from "./filtro.jsx";
+import produto from "../produto/produto.jsx";
 
 const query = {
     'roupas': ['womens-dresses', 'mens-shirts', 'tops'],
@@ -31,10 +33,16 @@ async function getProducts(categorias){
     return produtos
 }
 
+
+
+
+
+
+
 function ListagemProdutos() {
     const url = useParams()
     const [produtos, setProdutos] = React.useState(null)
-    // console.log(produtos)
+
     React.useEffect(()=>{
         setProdutos(null)
 
@@ -45,6 +53,47 @@ function ListagemProdutos() {
     }, [url])
 
 
+    function handleFilter(e){
+        const filter = e.target.textContent.toLowerCase()
+        let produtosFiltrados = []
+        const categoriasFiltro = {
+            'roupas': 'shirts',
+            'relogios': 'watches',
+            'tenis': 'shoes'
+        }
+
+        if(filter === 'masculino'){
+            produtosFiltrados = produtos.filter((produto)=>{
+                const categoriaFiltro = 'mens-'+ categoriasFiltro[url.categoria]
+                // console.log(categoriaFiltro)
+                // console.log(produto.category)
+                return produto.category === categoriaFiltro
+            })
+
+            console.log(produtosFiltrados)
+        }
+
+        // if(filter === 'masculino'){
+        //     produtosFiltrados = produtos.filter((produto)=>{
+        //         return produto.category === 'sunglasses'
+        //     })
+        // }
+        //
+        // if(filter === 'masculino'){
+        //     produtosFiltrados = produtos.filter((produto)=>{
+        //         return produto.category === 'sunglasses'
+        //     })
+        // }
+        //
+        // if(filter === 'masculino'){
+        //     produtosFiltrados = produtos.filter((produto)=>{
+        //         return produto.category === 'sunglasses'
+        //     })
+        // }
+
+        setProdutos(produtosFiltrados)
+    }
+
 
     return produtos !== null ? (
         <main key={produtos[0].category} id={'container_listagemProdutos'}>
@@ -52,12 +101,7 @@ function ListagemProdutos() {
                 <picture>
                     <img className={produtos[0].category} src={categoriaImagens[url.categoria]} alt=""/>
                 </picture>
-                <section id={'container_filtro'}>
-                    <Link to={'/'}>Filtro 01</Link>
-                    <Link to={'/'}>Filtro 01</Link>
-                    <Link to={'/'}>Filtro 01</Link>
-                    <Link to={'/'}>Filtro 01</Link>
-                </section>
+                <Filtro func={handleFilter}/>
             </header>
 
             <article id={'listagem'}>

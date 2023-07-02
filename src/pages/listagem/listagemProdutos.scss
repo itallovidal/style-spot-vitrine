@@ -22,7 +22,6 @@
     }
     #container_filtro{
       background: $cor-2;
-      padding: $esp-pp;
       width: 40%;
       transform: translateY(-50%);
       display: flex;
@@ -32,15 +31,21 @@
         padding-inline: $esp-m;
       }
 
-      a{
+      span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        width: 25%;
         color: white;
-        transition: 300ms;
+        transition: 200ms;
         padding: $esp-p $esp-pp;
+        cursor: pointer;
       }
 
-      a:hover{
+      span:hover{
         background: white;
-        color: $cor-1;
+        color: $cor-2;
 
       }
     }
