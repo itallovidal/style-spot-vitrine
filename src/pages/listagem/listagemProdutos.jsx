@@ -1,11 +1,10 @@
 import React from 'react';
-import {Link, Outlet, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import getItems from "../../utilities/getItems.jsx";
 import './listagemProdutos.css'
 import CardProduto from "../../components/cardProduto/cardProduto.jsx";
 import Loading from "../../components/loading/loading.jsx";
 import Filtro from "./filtro.jsx";
-import produto from "../produto/produto.jsx";
 
 const query = {
     'roupas': ['womens-dresses', 'mens-shirts', 'tops'],
@@ -42,7 +41,6 @@ async function getProducts(categorias){
 function ListagemProdutos() {
     const url = useParams()
     const [produtos, setProdutos] = React.useState(null)
-
     React.useEffect(()=>{
         setProdutos(null)
 
@@ -57,39 +55,44 @@ function ListagemProdutos() {
         const filter = e.target.textContent.toLowerCase()
         let produtosFiltrados = []
         const categoriasFiltro = {
-            'roupas': 'shirts',
-            'relogios': 'watches',
-            'tenis': 'shoes'
+            'roupas': ['shirts', 'dresses', 'tops'],
+            'tenis': ['shoes'],
+            'relogios': ['watches'],
         }
 
         if(filter === 'masculino'){
-            produtosFiltrados = produtos.filter((produto)=>{
-                const categoriaFiltro = 'mens-'+ categoriasFiltro[url.categoria]
-                // console.log(categoriaFiltro)
-                // console.log(produto.category)
-                return produto.category === categoriaFiltro
-            })
-
-            console.log(produtosFiltrados)
+            for (const produto of produtos) {
+                for (const categoria of categoriasFiltro[url.categoria]) {
+                    if(produto.category === `mens-${categoria}`)
+                        produtosFiltrados.push(produto)
+                }
+            }
         }
 
-        // if(filter === 'masculino'){
-        //     produtosFiltrados = produtos.filter((produto)=>{
-        //         return produto.category === 'sunglasses'
-        //     })
-        // }
-        //
-        // if(filter === 'masculino'){
-        //     produtosFiltrados = produtos.filter((produto)=>{
-        //         return produto.category === 'sunglasses'
-        //     })
-        // }
-        //
-        // if(filter === 'masculino'){
-        //     produtosFiltrados = produtos.filter((produto)=>{
-        //         return produto.category === 'sunglasses'
-        //     })
-        // }
+        if(filter === 'feminino'){
+            for (const produto of produtos) {
+                for (const categoria of categoriasFiltro[url.categoria]) {
+                    if(produto.category === `womens-${categoria}`)
+                        produtosFiltrados.push(produto)
+                }
+            }
+        }
+
+        if(filter === 'caro'){
+            produtos.sort( (a, b)=>{
+                return b.price - a.price
+            })
+
+            produtosFiltrados = [...produtos]
+        }
+
+        if(filter === 'barato'){
+            produtosFiltrados = produtos.sort( (a, b)=>{
+                return a.price - b.price
+            })
+
+            produtosFiltrados = [...produtos]
+        }
 
         setProdutos(produtosFiltrados)
     }
