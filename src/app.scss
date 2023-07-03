@@ -16,6 +16,7 @@ a{
 }
 
 main{
+  margin-top: 100px;
   opacity: 0;
   transform: translateY(5%);
   animation: show 500ms forwards;

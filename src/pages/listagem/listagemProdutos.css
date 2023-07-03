@@ -41,12 +41,20 @@
 @media (max-width: 500px) {
   #container_listagemProdutos #header_listagem #container_filtro {
     width: 100%;
-    padding-inline: 5%;
+    flex-wrap: wrap;
+    height: auto;
   }
 }
 #container_listagemProdutos #header_listagem #container_filtro #container_categoriasFiltro {
   display: flex;
   width: 60%;
+}
+@media (max-width: 500px) {
+  #container_listagemProdutos #header_listagem #container_filtro #container_categoriasFiltro {
+    width: 100%;
+    height: 80px;
+    padding-inline: 5%;
+  }
 }
 #container_listagemProdutos #header_listagem #container_filtro #container_categoriasFiltro button {
   height: 100%;
@@ -74,7 +82,12 @@
   height: 100%;
   position: relative;
   background: white;
-  height: 100%;
+}
+@media (max-width: 500px) {
+  #container_listagemProdutos #header_listagem #container_filtro #container_search {
+    width: 100%;
+    height: 80px;
+  }
 }
 #container_listagemProdutos #header_listagem #container_filtro #container_search input {
   height: 100%;

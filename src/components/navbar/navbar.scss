@@ -2,30 +2,72 @@
 
 #container_navbar {
   display: flex;
-  justify-content: space-around;
-  max-width: $largura-total;
-  background: $cor-2;
-  margin: $esp-pp auto;
-  color: white;
+  justify-content: space-between;
+  min-width: $largura-total;
+  margin: 0 auto;
   align-items: center;
   height: 80px;
-
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  transform: translateX(-50%);
+  background: $cor-2;
+  left: 50%;
+  padding-inline: $esp-m;
   @media (max-width: 500px) {
+    padding-inline: $esp-xg;
+  }
+
+
+  #logo_container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+
+    p{
+      font-family: $fonte-1;
+      font-style: italic;
+      font-weight: bold;
+      color: white;
+    }
+  }
+
+  .changeNav{
+    transform: translateX(-0);
+  }
+  #btn_menuOpen, #btn_menuClose{
+    padding: $esp-m;
+    font-size: 2rem;
+    color: white;
     display: none;
+    @media (max-width: 500px) {
+      display: initial;
+    }
   }
-
-  p{
-    font-family: $fonte-1;
-    font-style: italic;
-    font-weight: bold;
-    width: 25%;
-  }
-
   nav{
     width: 50%;
     display: flex;
     justify-content: space-around;
     height: 100%;
+    transition: 300ms;
+
+    @media (max-width: 500px) {
+      transform: translateX(100%);
+      position: fixed;
+      justify-content: center;
+      top: 0;
+      right: 0;
+      flex-direction: column;
+      height: 100svh;
+      width: 90%;
+      background-color: $cor-2;
+      z-index: 5;
+      align-items: center;
+
+    }
 
     a{
       padding: $esp-p $esp-pp;
@@ -36,6 +78,9 @@
       align-items: center;
       width: 100px;
       justify-content: center;
+      @media (max-width: 500px) {
+        height: 10%;
+      }
     }
 
     a:hover{
