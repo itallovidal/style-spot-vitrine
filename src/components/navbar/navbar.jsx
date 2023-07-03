@@ -19,10 +19,7 @@ function Navbar(){
                 }
             </nav>
 
-            <div id='container_search'>
-                <input type="search" placeholder={'Pesquise um produto..'}/>
-                <i className="fa-solid fa-magnifying-glass"></i>
-            </div>
+
         </header>
 
     )
