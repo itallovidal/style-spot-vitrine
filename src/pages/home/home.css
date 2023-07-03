@@ -23,7 +23,7 @@
 #container_home #container_categoria .container_categoriaItem img {
   height: 500px;
   object-fit: cover;
-  object-position: 40%;
+  object-position: top;
   width: 100%;
 }
 #container_home #container_categoria .container_categoriaItem .categoria_info {
