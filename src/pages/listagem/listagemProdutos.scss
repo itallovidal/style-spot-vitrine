@@ -16,7 +16,7 @@
         object-fit: cover;
       }
 
-      .womens-dresses{
+      .womens-dresses, .mens-shirts, .tops{
         object-position: 0 10%;
       }
     }
@@ -31,7 +31,7 @@
         padding-inline: $esp-m;
       }
 
-      span{
+      button{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -41,12 +41,18 @@
         transition: 200ms;
         padding: $esp-p $esp-pp;
         cursor: pointer;
+        background: $cor-2;
+        border: none  ;
       }
 
-      span:hover{
+      button:hover{
         background: white;
         color: $cor-2;
+      }
 
+      .filtro-ativo{
+        background: white;
+        color: $cor-2;
       }
     }
   }
@@ -54,7 +60,8 @@
   #listagem{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 5%;
 
     .container_card{
       margin-bottom: $esp-p;

@@ -57,6 +57,7 @@
   display: flex;
   width: 100%;
   margin-block: 3%;
+  height: 80px;
 }
 .container_card .info_produto .nomeProduto, .container_card .info_produto .marcaProduto {
   display: flex;
@@ -65,6 +66,7 @@
 }
 .container_card .info_produto .nomeProduto {
   width: 65%;
+  overflow: hidden;
   background: #F0F0F0;
 }
 .container_card .info_produto .marcaProduto {

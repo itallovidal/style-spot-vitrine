@@ -27,7 +27,7 @@
   width: 100%;
   object-fit: cover;
 }
-#container_listagemProdutos #header_listagem picture .womens-dresses {
+#container_listagemProdutos #header_listagem picture .womens-dresses, #container_listagemProdutos #header_listagem picture .mens-shirts, #container_listagemProdutos #header_listagem picture .tops {
   object-position: 0 10%;
 }
 #container_listagemProdutos #header_listagem #container_filtro {
@@ -43,7 +43,7 @@
     padding-inline: 5%;
   }
 }
-#container_listagemProdutos #header_listagem #container_filtro span {
+#container_listagemProdutos #header_listagem #container_filtro button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,15 +53,22 @@
   transition: 200ms;
   padding: 3% 1.5%;
   cursor: pointer;
+  background: #1E1E1E;
+  border: none;
 }
-#container_listagemProdutos #header_listagem #container_filtro span:hover {
+#container_listagemProdutos #header_listagem #container_filtro button:hover {
+  background: white;
+  color: #1E1E1E;
+}
+#container_listagemProdutos #header_listagem #container_filtro .filtro-ativo {
   background: white;
   color: #1E1E1E;
 }
 #container_listagemProdutos #listagem {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 5%;
 }
 #container_listagemProdutos #listagem .container_card {
   margin-bottom: 3%;

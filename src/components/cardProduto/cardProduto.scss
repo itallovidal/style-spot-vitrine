@@ -48,6 +48,7 @@
     display: flex;
     width: 100%;
     margin-block: $esp-p;
+    height: 80px;
 
     .nomeProduto, .marcaProduto{
       display: flex;
@@ -56,6 +57,7 @@
     }
     .nomeProduto{
       width: 65%;
+      overflow: hidden;
       background: $cor-3;
     }
 
